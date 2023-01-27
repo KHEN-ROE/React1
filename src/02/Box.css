@@ -1,0 +1,55 @@
+.bheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-size: 5vh;
+}
+
+.content {
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    flex-direction: column;
+}
+
+.rowDiv {
+    display: flex;
+    
+    align-items: center; 
+    justify-content: center;
+    width: 60vw; 
+    height: 6vh;
+    border-bottom: 1px solid black;
+}
+
+.col {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#colRank {
+    width: 10%;
+  
+}
+#colmovieNm {
+    width: 60%;
+    
+}
+#colsalesAmt {
+    width: 10%;
+    
+}
+#colrankInten {
+    width: 10%;
+   
+}
