@@ -21,7 +21,7 @@ h1 {
     flex-direction: column;
 }
 
-.rowDiv {
+.rowDiv, rowDiv0 {
     display: flex;
     
     align-items: center; 
@@ -31,6 +31,20 @@ h1 {
     border-bottom: 1px solid black;
 }
 
+.rowDiv:hover, .rowDiv:active {
+    background-color: beige;
+}
+
+.rowDay {
+    width: 60vw; 
+    height: 6vh;
+    padding: 7px;
+    background-color: brown;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
 .col {
     display: inline-flex;
     justify-content: center;
@@ -52,4 +66,12 @@ h1 {
 #colrankInten {
     width: 10%;
    
+}
+
+.spup {
+    color: red;
+}
+
+.spdown {
+    color: blue;
 }
