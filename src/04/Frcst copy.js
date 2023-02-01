@@ -1,8 +1,5 @@
 import './Frcst.css' ;
-import Frcheader from './Frcheader';
-import Frcdt from './Frcdt';
-import Frccn from './Frccn';
-import {useState, useEffect} from "react";
+import {useState} from "react";
 
 const Frcst = () => {
     /* 공공데이터포털 : 한국환경공단_에어코리아_대기오염정보
@@ -16,11 +13,11 @@ const Frcst = () => {
     frcstThreeDt : 셋째날예보일시
     frcstFourDt : 넷째날예보일시
     */
-    
+    const [info, setInfo] = useState() ;
     
     const items = [
         {
-        "frcstOneDt":"2023-02-02",//여기서 key는 frcstOneDt이고 value가 날짜인가?
+        "frcstOneDt":"2023-02-02",
         "frcstTwoDt":"2023-02-03",
         "frcstThreeDt":"2023-02-04",
         "frcstFourDt":"2023-02-05",
@@ -32,65 +29,53 @@ const Frcst = () => {
         "presnatnDt":"2023-01-30"
         }
         ]
+        let item = items[0] ;
+        console.log(item);//오브젝트만 가져옴
+        
+        const showInfo = (seldt) => {
+            let infoArry=[];
+            // console.log(seldt);
+            switch (seldt) {
+                case 1: infoArry = item.frcstOneCn.split(',') ; break;
+                case 2: infoArry = item.frcstTwoCn.split(',') ; break;
+                case 3: infoArry = item.frcstThreeCn.split(',') ; break;
+                case 4: infoArry = item.frcstFourCn.split(',') ; break;
+                
+            }
+            // infoArry = infoArry.map((v) => <li key={`${v}-${seldt}`} className='lired'>{v}</li>) ;//배열로 만들어서 ','기준으로 자르고 <li>로 정렬. //오류나면 키값 만들면 됨 {}자바스크립트 수식을 쓰고, ``은 자바스크립트 수식으로 문자열을 만듦. 여기서 -는 minus연산이 아님. 이렇게 써도 되고{v+'-'+seldt} 걍{v}이렇게 키값 설정해도됨
+            infoArry = infoArry.map((v) => 
+             
+            <li key={v + '-' + seldt}><span>{v.split(':')[0]}</span>({v.includes('높음') ?<span className='lired'>{v.split(':')[1]}</span> :<span>{v.split(':')[1]}</span> })
+            </li>
+            );
+            
+            console.log(infoArry)
+            setInfo(infoArry);
+          
+        }
 
-    let fcrstDt = ["frcstOneDt", "frcstTwoDt","frcstThreeDt", "frcstFourDt"];
-    let fcrstCn = ["frcstOneCn", "frcstTwoCn", "frcstThreeCn", "frcstFourCn"];
-    
-    fcrstDt = fcrstDt.map((k) => items[0][k]); //items의 0번째 k값 값
-    fcrstCn = fcrstCn.map((k) => items[0][k]);//map함수는 fcrstCn배열 기준으로 작동해서 새로운 배열 생성
-    console.log("fcrstDt", fcrstDt);
-    console.log("fcrstCn", fcrstCn);
+       
 
-    //두 개를 붙여서 object 만들면?
-    // let merge = fcrstDt.map((k, i) =>({[k]:items[0][k], [fcrstCn[i]]:items[0][fcrstCn[i]]}));
-
-    let fcrobj ={};
-    for(let [idx, k] of fcrstDt.entries()){//fcrstDt배열에서 키와 값 순회하면서 fcrstdt에 매치되는 fcrstcn의 키값을 fcrobj에 대입한다.
-        // console.log('idx=', idx, 'v=', v, 'cnvalue=', fcrstCn[idx])
-        fcrobj[k] = fcrstCn[idx];//fcrobj의 value에 fcrstCn의 키값 대입
-    }
-    console.log("fcrobj", fcrobj) ;
-    
-
-    // console.log("merge", merge);
-    
-    // fcrstDT.push(items[0].frcstOneDt);
-    // fcrstDT.push(items[0].frcstTwoDt);
-    // fcrstDT.push(items[0].frcstThreeDt);
-    // fcrstDT.push(items[0].frcstFourDt);
-    
-    // for(let i=1; i<=3; i++){
-    //     fcrstDT.push(items[0][`frcst${i}Dt`]);
-    // }
-
-    // console.log(fcrstDT)
-
-    // let frcstCn = [];
-    // frcstCn.push(items[0].frcstOneCn);
-    // frcstCn.push(items[0].frcstTwoCn);
-    // frcstCn.push(items[0].frcstThreeCn);
-    // frcstCn.push(items[0].frcstFourCn);
-                    
-    // console.log(frcstCn);
-
-      
-    let [cn, setCn] = useState(fcrobj["2023-02-02"]) ;
-    let [dt, setDt] = useState() ;
-
-    useEffect(()=>{
-        console.log("userEffect", fcrobj[dt]);
-        fcrobj[dt] && setCn(fcrobj[dt]);
-    }, [dt]);
-
-    return ( //속성값을 가지고 있는 사용자 정의 태그를 만들었다. / usestate를 넘겨줘야 하는데, dt에서 state 값 변경?
-
+    return (
          <>
-           <Frcheader />
-           <p>{dt}</p>
-           <div className="main">
-                <Frcdt dt={fcrstDt} setDt={setDt} />
-                <Frccn cn={cn} />
-           </div>
+            <div className="header">
+                <h1>미세먼지 예보</h1>
+            </div>
+            <div className="main">
+                <div className="mainbox1">
+                    <div className='dtdiv1' onClick={() => showInfo(1)}>{item.frcstOneDt}</div>
+                    <div className='dtdiv1' onClick={() => showInfo(2)}>{item.frcstTwoDt}</div>
+                    <div className='dtdiv1' onClick={() => showInfo(3)}>{item.frcstThreeDt}</div>
+                    <div className='dtdiv1' onClick={() => showInfo(4)}>{item.frcstFourDt}</div>
+                    </div>
+                <div className="mainbox2">
+                    <div className='detail'>
+                        <ul>
+                        {info}
+                        </ul>
+                    </div>
+                </div>
+            </div>
          </>
     ) ;
 }
