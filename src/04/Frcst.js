@@ -80,6 +80,10 @@ const Frcst = () => {
 
     useEffect(()=>{
         // console.log("userEffect", fcrobj[dt]);
+        
+        //처음에 dt에 값이 없으므로 && 뒤에 실행 안함
+        //dt 찍으면 [dt]가 바뀌고, dt에 값이 생기므로 && 뒤에 실행 -> setCn으로 cn도 바꿈
+        //dt 정의되지않으면 setCn에 내용 안나타나게 하기위하여
         fcrobj[dt] && setCn(fcrobj[dt]);
     }, [dt]);
     //dt가 바뀌면 그때 cn을 바꾸기 위해 useEffect를 쓴다. 
