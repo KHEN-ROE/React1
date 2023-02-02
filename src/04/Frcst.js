@@ -36,6 +36,7 @@ const Frcst = () => {
     let fcrstDt = ["frcstOneDt", "frcstTwoDt","frcstThreeDt", "frcstFourDt"];
     let fcrstCn = ["frcstOneCn", "frcstTwoCn", "frcstThreeCn", "frcstFourCn"];
     
+    //map 함수 - key값이 돌면서 items[0]번째의 key값을 찾아서 배열로 만들어줌
     fcrstDt = fcrstDt.map((k) => items[0][k]); //items의 0번째 k값 값
     fcrstCn = fcrstCn.map((k) => items[0][k]);//map함수는 fcrstCn배열 기준으로 작동해서 새로운 배열 생성
     console.log("fcrstDt", fcrstDt);
@@ -74,7 +75,7 @@ const Frcst = () => {
     // console.log(frcstCn);
 
       
-    let [cn, setCn] = useState(fcrobj["2023-02-02"]) ;
+    let [cn, setCn] = useState(fcrstCn[0]) ;
     let [dt, setDt] = useState() ;
 
     useEffect(()=>{

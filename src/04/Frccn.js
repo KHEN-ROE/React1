@@ -6,13 +6,13 @@ const Frccn = ({dt, cn}) => {
     let kn = 0 ; 
 
    infoArry = infoArry.map((v) =>         
-            <li key={dt + kn++}>
-                <span>{v.split(':')[0]}</span>(
-                {v.includes('높음') ?<span className='lired'>{v.split(':')[1]}</span> 
-                :<span>{v.split(':')[1]}</span> })
-            </li>
-             
-       );
+        v.includes('높음') ?
+        <li key = {dt + kn++}>
+            <span>{v.split(':')[0]}</span>
+            <span className='lired'>{v.split(':')[1]}</span> 
+        </li> :
+        <li key = {dt + kn++}>{v}</li>
+    );
 
     return(
         <div className="mainbox2">
