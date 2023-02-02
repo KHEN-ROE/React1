@@ -1,11 +1,12 @@
 const Mydiv11 = (probs) => {
     
-    console.log(probs)
+    const user2 = probs.user2;
+
     return(
         <div className="mydiv11">
             Mydiv11
             <p id="p1">
-                {probs.user};
+                {user2};
             </p>
             <p>
                 {probs.divname};

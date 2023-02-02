@@ -2,38 +2,41 @@ import Mydiv11 from "./Mydiv11";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const Mydiv1 = ({rname, n, setN}) =>{//probs에 setN함수도 전달 가능
-    
+const Mydiv1 = (probs) =>{//probs에 setN함수도 전달 가능
+    const user1 = probs.user1;
 
-    let [cnt, setCnt] = useState(0);//cnt는 리액트가 관리하는 useState 변수이다.
+    let [cnt, setCnt] = useState(0);//cnt는 리액트가 관리하는 useState 변수이다. set은 cnt를 변화시켜주는 역할을 하는 함수다
 
     const addCnt = () => {
-        cnt += 1;
+        cnt+=1;
         setCnt(cnt);//()안에 바꾸고 싶은 내용. 100으로 바꾸고 싶으면 100넣으면됨.수식쓸 수 있다. if문 쓸 수 없다. 삼항연산자가능
-        setN(cnt);
-        console.log(cnt);
+        probs.setN(cnt);
+    
     }
 
-    useEffect(() => {
-        console.log('변경되었습니다...');
-    });
+    // useEffect(() => {
+        //랜더링이 될때마다 실행
+    //     console.log('변경되었습니다...');
+    // });
     
-    useEffect(() => {
-        console.log('mydiv 처음입니다...');
-        return (
-            console.log('종료...')
-        )
-    }, []);
+    // useEffect(() => {
+          //최초 한번만 실행
+    //     console.log('mydiv 처음입니다...');
+    //     return (
+    //         console.log('종료...')
+    //     )
+    // }, []);
 
-    useEffect(() => {
-        console.log('cnt변경으로 n변경');
-        setN(++cnt) ;
-    }, [cnt]);
+    // useEffect(() => {  //스테이트 변수가 바뀌었을때, 행위를 하고싶음!
+    //     console.log('cnt변경으로 n변경');
+    //     setN(++cnt) ;       
+    // }, [cnt]);
 
     return(
         <div className="mydiv1">
-            <h2 className="divh2">Mydiv1 {rname} {n} {setN}</h2>
-            <Mydiv11 user={rname} divname={'사용자정의'+ cnt} />
+            <h2 className="divh2">Mydiv1 {user1} n={probs.n1}</h2>
+            <Mydiv11 user2 = {user1} divname = {'사용자정의'+ cnt} />
+            
             <div className="divbt">
                 <button onClick={addCnt}>❤</button>
                 <span>{cnt}</span>

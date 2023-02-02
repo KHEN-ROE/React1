@@ -7,15 +7,19 @@ const Mydiv = () => { //리액트의 함수형 컴포넌트는 반드시 대문�
     const rname = 'React!' ; 
     let[n, setN] = useState(0);
 
+    const upN = () => {
+        n+=1;
+        setN(n);
+    }
 
     return(//h1 태그가 나가는 거임. 그래서 사용자 정의 태그라고 함
         <div className="content">
             <div className="header">
-                <h1>컴포넌트 예제 {rname} {n}</h1> 
+                <h1 onClick={upN}>컴포넌트 예제 {rname} {n}</h1> 
             </div>
             <div className="main">
-                <Mydiv1 user={rname} n={n} setN={setN} /> 
-                <Mydiv2 user={rname} n={n} setN={setN} />
+                <Mydiv1 user1={rname} n1={n} setN ={setN} /> 
+                <Mydiv2 user3={rname} n1={n} />
             </div>
         </div>
     ) ;
