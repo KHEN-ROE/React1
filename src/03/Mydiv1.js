@@ -20,14 +20,14 @@ const Mydiv1 = (probs) =>{//probs에 setN함수도 전달 가능
     // });
     
     // useEffect(() => {
-          //최초 한번만 실행
+          //최초 한번만 실행하고 싶을 때
     //     console.log('mydiv 처음입니다...');
     //     return (
     //         console.log('종료...')
     //     )
     // }, []);
 
-    // useEffect(() => {  //스테이트 변수가 바뀌었을때, 행위를 하고싶음!
+    // useEffect(() => {  //스테이트 변수가 바뀔 때 실행하고 싶은 경우. 배열 안에 검사하고 싶은 값 삽입
     //     console.log('cnt변경으로 n변경');
     //     setN(++cnt) ;       
     // }, [cnt]);
