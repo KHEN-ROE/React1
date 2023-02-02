@@ -1,9 +1,10 @@
 const Frcdt = ({dt, setDt}) => {//probs로 받아도 되고 오브젝트로 받아도 됨
-    let dtdiv1Tag = [...dt] ;
-    console.log(setDt)
+    
+    let dtdiv1Tag = [...dt] ;//...이 뭐지?
+    // console.log(setDt)
 
     const show = (v) => {
-        console.log("show", v)
+        // console.log("show", v)
         setDt(v) ;
     }
 
@@ -11,7 +12,7 @@ const Frcdt = ({dt, setDt}) => {//probs로 받아도 되고 오브젝트로 받�
         <div className='dtdiv1' key={v} onClick={() => show(v)}>{v}</div>
     ) ;
 
-    console.log("frcdt ", dtdiv1Tag);
+    // console.log("frcdt ", dtdiv1Tag);
     
     return(
         <div className="mainbox1">

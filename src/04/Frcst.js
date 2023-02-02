@@ -49,7 +49,7 @@ const Frcst = () => {
         // console.log('idx=', idx, 'v=', v, 'cnvalue=', fcrstCn[idx])
         fcrobj[k] = fcrstCn[idx];//fcrobj의 value에 fcrstCn의 키값 대입
     }
-    console.log("fcrobj", fcrobj) ;
+    // console.log("fcrobj", fcrobj) ;
     
 
     // console.log("merge", merge);
@@ -78,9 +78,10 @@ const Frcst = () => {
     let [dt, setDt] = useState() ;
 
     useEffect(()=>{
-        console.log("userEffect", fcrobj[dt]);
+        // console.log("userEffect", fcrobj[dt]);
         fcrobj[dt] && setCn(fcrobj[dt]);
     }, [dt]);
+    //dt가 바뀌면 그때 cn을 바꾸기 위해 useEffect를 쓴다. 
 
     return ( //속성값을 가지고 있는 사용자 정의 태그를 만들었다. / usestate를 넘겨줘야 하는데, dt에서 state 값 변경?
 
@@ -89,7 +90,7 @@ const Frcst = () => {
            <p>{dt}</p>
            <div className="main">
                 <Frcdt dt={fcrstDt} setDt={setDt} />
-                <Frccn cn={cn} />
+                {dt && <Frccn dt ={dt} cn={cn} /> }
            </div>
          </>
     ) ;
