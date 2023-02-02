@@ -1,5 +1,3 @@
-
-
 const Frccn = ({cn}) => {
     console.log("cn", cn)
     let infoArry = cn.split(',');

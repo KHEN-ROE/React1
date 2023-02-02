@@ -11,8 +11,8 @@ const Frcdt = ({dt, setDt}) => {//probs로 받아도 되고 오브젝트로 받�
         <div className='dtdiv1' key={v} onClick={() => show(v)}>{v}</div>
     ) ;
 
-
     console.log("frcdt ", dtdiv1Tag);
+    
     return(
         <div className="mainbox1">
             {dtdiv1Tag}
