@@ -146,70 +146,46 @@ const Taccident = () => {
         "perPage": 20,
         "totalCount": 15
       } ;
+    
+    console.log("apiData", apiData);
+    for(let item in Object.keys(apiData)) {
+      console.log("object 키순회", item);
+    }
+    
+    let c1, c2, data ;
+
+    //데이터 data => 배열 [{항목의 내용}, ...]
+    data = apiData.data ;
+    // console.log("data", data); 
+
+
+    //대분류 c1 : 배열[대분류1, ...]
+    c1 = data.map((item) => item['사고유형_대분류'] )//item은 오브젝트. map 함수 이용하여 c1배열에 저장
+    console.log(c1)//중복 제거 어떻게 할건지?
+    c1 = new Set(c1);//set 함수 이용해서 중복제거
+    c1 = [...c1];//c1을 전개연산자 이용하여 다시 배열로 만듦
+    console.log(c1);
+
+    //중분류 c2 : 배열[[대분류1, 중분류1], ...] 중복제거 안 하고 15개 다 들어가야 한다. 배열 안에 배열을 넣기 - 배열을 2개 선언 
+    c2 = [];
+    for(let item of data) {//item에 오브젝트가 들어간다
+      let temp = [] ;
+      temp.push(item.사고유형_대분류);
+      temp.push(item.사고유형_중분류);
+      c2.push(temp);
       
-      //자바스크립트 object는 키와 값으로 분리 가능
-      let objk = Object.keys(apiData);
-      let objv = Object.values(apiData);
-      console.log("object 키 ", objk);
-      console.log("object 값 ", objv);
-      
-      //배열의 map, filter
-      // let newv ;
-      // newv = objk.keys(apiData).map((k) => apiData[k]);
-      // console.log("새로운 배열", newv);
+    }
+    console.log("c2 item", c2);
+    
+    c2 = [...c2];
+    console.log("펼친 c2", c2)
+    
+  
 
-      ///배열의 filter
-      let data;
-      data = objk.filter((item) => item === 'data')
-      data = data.map((k) => apiData[k])
-      console.log("filter로 data 추출", data)
-
-      //오브젝트 키로 접근
-      data = apiData.data ;
-      console.log("오브젝트 키로 data추출", data);
-      data = apiData['data'] ;
-      console.log("오브젝트 키로 data추출", data);
-
-      //대분류 추출
-      let c1 = data.map((item) => item.사고유형_대분류);//오브젝트에서 대분류를 가져온다
-      console.log("대분류 추출 1단계", c1);
-      c1 = new Set(c1); //set 함수로 중복제거
-      console.log("대분류 추출 2단계 set으로 중복제거", c1);
-      c1 = [...c1]; //전개(스프레드) 연산자
-      console.log("대분류 추출 3단계 set을 배열로 변환", c1);
-
-      //중분류
-      let c2 = data.map((item) => (item.사고유형_대분류 + ',' + item.사고유형_중분류).split(','));
-      console.log("중분류 map으로 추출", c2);
-
-      c2 = data.map((item) => [item.사고유형_대분류, item.사고유형_중분류]);
-      console.log("중분류 map으로 추출", c2);
-
-      //배열의 entries. 키와 값 둘다 추출
-      for(let [k, v] of c2.entries()){
-        console.log("k", k, ", v", v);
-      }
-
-      //배열
-      let c11 = data.map((item) => item.사고유형_대분류);
-      let c21 = data.map((item) => item.사고유형_중분류);
-      console.log("c11", c11) ; //각각 분류가 된다
-      console.log("c21", c21) ;
-      //둘을 합쳐서 오브젝트로 만들면
-      let cobj = {}; //중분류는 중복이 없으므로 중분류를 키로한다
-      for(let [k, v] of c21.entries()){
-        console.log("k", k, ", v", v);
-        cobj[v] = c11[k] ;
-      }
-      console.log("cobj", cobj);//중복되는 기타는 없어지고 맨 마지막 항목만 들어온다. 
-
-      // 숙제 
-      //['횡단중', '차도 통행중', '길가장자리구역통행중', '보도통행중'] ...} 이렇게 나오게 만들기.
-      
 
     return (
         <div className="main">
-          
+          <Taccidentm c1={c1} c2={c2} data={data}/>
         </div>
     ) ;
 }
