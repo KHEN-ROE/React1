@@ -1,0 +1,50 @@
+.header {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: red;
+    color: white;
+    width: 100vw;
+    height: 10vh;
+}
+
+.tc1, .tc2, .detail {
+    display: flex;
+    border: solid 1px black;
+    width: 25vw;
+    height: 55vh;
+    margin: 10px;
+    margin-top: 20px;
+    align-items: top;
+    justify-content: center;
+    float: left;
+}
+  
+
+  .box2 {
+    width: 8vw;
+    height: 8%;
+    border: solid 1px black;
+    background-color: lightblue;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom:  30px;
+    
+  }
+
+
+
+.detail {
+    width: 40vw;
+}
+
+.p1 {
+    font-size: 15px;
+    display: flex;
+    border: solid 1px black;
+    align-items: top;
+    justify-content: center;
+    
+}
