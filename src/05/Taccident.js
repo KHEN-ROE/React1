@@ -147,7 +147,7 @@ const Taccident = () => {
         "totalCount": 15
       } ;
     
-    console.log("apiData", apiData);
+    console.log("apiData", apiData);//오브젝트 출력
     for(let item in Object.keys(apiData)) {
       console.log("object 키순회", item);
     }

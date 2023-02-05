@@ -10,7 +10,7 @@ const Mydiv1 = (probs) =>{//probs에 setN함수도 전달 가능
     const addCnt = () => {
         cnt+=1;
         setCnt(cnt);//()안에 바꾸고 싶은 내용. 100으로 바꾸고 싶으면 100넣으면됨.수식쓸 수 있다. if문 쓸 수 없다. 삼항연산자가능
-        probs.setN(cnt);
+        probs.setN(cnt);//부모 컴포넌트에서 관리하고 싶은 태그를 여기다 넘겨줌
     
     }
 
