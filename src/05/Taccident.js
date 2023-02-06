@@ -156,7 +156,7 @@ const Taccident = () => {
 
     //데이터 data => 배열 [{항목의 내용}, ...]
     data = apiData.data ;
-    // console.log("data", data); 
+    console.log("data", data); 
 
 
     //대분류 c1 : 배열[대분류1, ...]

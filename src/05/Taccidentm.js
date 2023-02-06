@@ -23,9 +23,9 @@ const Taccidentm = ({c1, c2, data}) => {
 
     //state 변수 변경
     //맨 처음 한 번만 실행
-    useEffect(()=>{
-        console.log("처음 한번만 실행")
-    }, [])
+    // useEffect(()=>{
+    //     console.log("처음 한번만 실행")
+    // }, [])
 
     //해당하는 state 변수가 변경될 때마다
     useEffect(()=> {
