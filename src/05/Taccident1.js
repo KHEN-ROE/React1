@@ -211,7 +211,9 @@ const Taccident = () => {
       }, {});
       
       console.log(result);
-      
+
+  
+
 
     return (
         <div className="main">

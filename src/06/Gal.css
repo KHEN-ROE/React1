@@ -48,5 +48,25 @@
     border-radius: 10px;
  }
 
+ .galTitle {
+  font-size: 30px;
+  font-weight: bold;
+  color: darkblue;
+ }
+
+ .galPhotographer {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.galPhotographyLocation {
+  color: brown;
+  font-size: 17px;
+}
+
+.galSearchKeyword {
+  font-style: italic;
+  color: darkorchid;
+}
  
  

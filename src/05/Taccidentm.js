@@ -40,7 +40,7 @@ const Taccidentm = ({c1, c2, data}) => {
     useEffect(()=> {//selc2가 변화하면 if안의 명령문을 수행함. 필터함수로 걸러진 새로운 배열이 selData에 저장된다.
         console.log("selc2", selc2);
         if(selc1 && selc2){
-            setSelData(data.filter((i)=> i.사고유형_대분류 ===selc1 && i.사고유형_중분류 ===selc2)[0])
+            setSelData(data.filter((i)=> i.사고유형_대분류 ===selc1 && i.사고유형_중분류 ===selc2)[0])//[0]이 뭔데
         }
     },[selc2]);
 

@@ -144,10 +144,6 @@ const Gal = () => {
     console.log("c2",c2)
 
     
-
-    
-    
-      
     return (
         <div className="main">
           <GalMain c1={c1} c2={c2} data1={data1}/>
