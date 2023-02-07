@@ -138,15 +138,15 @@ const Gal = () => {
     c1 = data1.map((item) => item['galTitle'])
     console.log("c1", c1)
 
-    //대분류 눌렀을 때 c2
-    let c2;
-    c2 = data1.map((item) => item)
-    console.log("c2",c2)
+    // //대분류 눌렀을 때 c2
+    // let c2;
+    // c2 = data1.map((item) => item)
+    // console.log("c2",c2)
 
     
     return (
         <div className="main">
-          <GalMain c1={c1} c2={c2} data1={data1}/>
+          <GalMain c1={c1} data1={data1}/>
         </div>
     ); 
 }

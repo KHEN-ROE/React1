@@ -4,7 +4,7 @@ import GalC2 from "./GalC2";
 import Ghead from "./Ghead";
 
 
-const GalMain = ({c1, c2, data1}) => {
+const GalMain = ({c1, data1}) => {
     
     //선택된 대분류
     let [selc1, setSelc1] = useState(); //title들을 변화시키기위한 useState를 선언. 변화시키려면 setSelc1을 GalC1에다가 전달하고, GalC1에서 타이틀들을 클릭했을 때 setSelc1이 발동되도록 하면 된다.
