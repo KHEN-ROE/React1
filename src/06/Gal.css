@@ -24,7 +24,7 @@
     color: white;
   }
 
-  .Tag1 {
+  .Tag1, .Tag11 {
     display: flex;
     border: 1px solid black;
     border-radius: 10px;
@@ -36,7 +36,7 @@
     text-align: center;
   }
 
-  .Tag1:hover, .Tag1:active{
+  .Tag1:hover, .Tag1:active, .Tag11:hover, .Tag11:active{
     background-color: darkblue;
     color: white;
   }
