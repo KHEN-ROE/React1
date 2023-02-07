@@ -7,7 +7,7 @@ const Frcdt = ({frcdt, setDt}) => {//probs로 받아도 되고 오브젝트로 �
     console.log("dtdiv1Tag", dtdiv1Tag);
     // console.log(setDt)
 
-    const show = (v) => {//v를 매개변수로 받아서 setDt함수의 인자로 다시 전달. 그러면 setDt가 여기서 뭔데?
+    const show = (v) => {//v를 매개변수로 받아서 setDt함수의 인자로 다시 전달. 날짜를 클릭할 때마다 state가 변화하게됨. 클릭한 날짜 value를 dt에 저장
         // console.log("show", v)
         setDt(v) ;
     }

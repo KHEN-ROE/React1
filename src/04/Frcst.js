@@ -39,6 +39,7 @@ const Frcst = () => {
     //map 함수 - key값이 돌면서 items[0]번째의 key값을 찾아서 배열로 만들어줌
     frcDt = frcDt.map((k) => items[0][k]); //items의 0번째 k값 값. map 함수를 이용해서 frcDt배열에 접근하여 값들을 하나씩 다 가져온다. 가져온 값들을 인자 k를 통해서 items (객체)배열에 보낸다. 이제 이 값들이 key가 된다. items 객체배열의 0번지에서 key에 해당하는 value를 추출한다. 그걸 frcDt에 대입한다.  이 배열에서는 객체가 하나만 유일하게 선언됨.
     frcCn = frcCn.map((k) => items[0][k]);//map함수는 fcrCn배열 기준으로 작동해서 새로운 배열 생성
+    console.log("items[0]",items[0])
     console.log("frcDt", frcDt);
     console.log("frcCn", frcCn);
 
@@ -81,10 +82,10 @@ const Frcst = () => {
     useEffect(()=>{
         // console.log("userEffect", fcrobj[dt]);
         
-        //처음에 dt에 값이 없으므로 && 뒤에 실행 안함
+        //처음에 dt에 값이 없으므로(클릭을 안했으므로) && 뒤에 실행 안함
         //그러다가 dt 찍으면 [dt]가 바뀌고, dt에 값이 생기므로 && 뒤에 실행 -> setCn으로 cn도 바꿈. 이때 setCn의 매개변수는 frcobj[dt]이다
         //dt 정의되지않으면 setCn에 내용 안나타나게 하기위하여
-        frcobj[dt] && setCn(frcobj[dt]);
+        frcobj[dt] && setCn(frcobj[dt]);//즉 날짜를 클릭했을 때 cn에다가 클릭한 날짜에 해당하는 상세내용을 저장한다.
     }, [dt]);
     //dt가 바뀌면 그때 cn을 바꾸기 위해 useEffect를 쓴다. 
 
@@ -97,7 +98,7 @@ const Frcst = () => {
                 <Frcdt frcdt={frcDt} setDt={setDt} />
                 {/* 눌렀을 때 show함수 발동. 그때 dt바뀌므로 setDt 인자로 전달 */}
                 {dt && <Frccn dt ={dt} cn={cn} /> } 
-                {/* falsy 연산자? */}
+                {/*날짜를 클릭했을 때 Frccn에 dt와 cn 전달 */}
            </div>
          </>
     ) ;

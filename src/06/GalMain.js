@@ -41,7 +41,7 @@ const GalMain = ({c1, data1}) => {
 
             <div className="main">
                 <GalC1 c1={c1} selc1={selc1} setSelc1={setSelc1} />
-                {selData && <GalC2 selData={selData} />}
+                {selc1 && <GalC2 selData={selData} />}
             </div>
         </div>
     );
