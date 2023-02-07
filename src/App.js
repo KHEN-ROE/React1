@@ -5,8 +5,8 @@ import './App.css';//index.js에서 App임포트하고
 // import Box from './02/Box';
 // import Example from './03/Example';
 // import Taccident1 from './05/Taccident1';
-import Gal from './06/Gal' ;
-
+// import Gal from './06/Gal' ;
+import Mycom from './07/Mycom';
 
 const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하고 싶으면 부모태그로 감싸면됨
   return (
@@ -16,7 +16,8 @@ const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하
       // <Box />
       //  <Example />
       // <Taccident1 />
-      <Gal />
+      // <Gal />
+      <Mycom />
   );
 }
 
