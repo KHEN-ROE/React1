@@ -74,25 +74,29 @@
     border-radius: 10px;
  }
 
- .galTitle {
+ .li1 {
   font-size: 30px;
   font-weight: bold;
   color: darkblue;
  }
 
- .galPhotographer {
+ .li3 {
   font-size: 18px;
   font-weight: bold;
 }
 
-.galPhotographyLocation {
+.li2 {
   color: brown;
   font-size: 17px;
 }
 
-.galSearchKeyword {
+.li5 {
   font-style: italic;
   color: darkorchid;
+}
+
+li {
+  list-style-type: none;
 }
  
  
