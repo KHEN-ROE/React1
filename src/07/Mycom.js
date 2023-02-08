@@ -16,7 +16,7 @@ const Mycom = () =>{
     const checkForm = (e) =>{
         e.preventDefault();//폼에있는 이벤트 처리할 때 이벤트 물리는 경우 방지 위해 선언
 
-        setTag(`입력된 아이디는 ${txt1R.current.value}이고 비밀번호는 ${txt2R.current.value}입니다.`)
+        setTag(`입력된 아이디는 ${txt1R.current.value}이고 비밀번호는 ${txt2R.current.value}입니다.`)//눌렀을 때 이 함수가 setTag 함수 호출. 연산을 수행하고 tag에 값 저장. 래퍼 변수가 값을 들고 있다가 확인버튼 누르고 랜더링 되면 화면에 출력
     }
 
     return(

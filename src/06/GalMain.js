@@ -7,7 +7,7 @@ import Ghead from "./Ghead";
 //이제 랜더링될 때마다 연산을 수행할 useEffect를 선언한다. useEffect에서는 선택한 selc1이 data1배열의 galTilte과 일치하면 data1배열에서 그 타이틀이 있는 항목을 selData에 저장한다.
 //이제 selData에 data1의 상세 내용들이 저장되었고 GalC2에 넘겨준다. GalC2 에서는 selData를 받아서 화면에 출력한다.(map함수를 쓰든, return문 안에 seldata.galTitle 이런식으로 하든)
 
-const GalMain = ({c1, c2, data1}) => {
+const GalMain = ({c1, data1}) => {
     
     //선택된 대분류
     let [selc1, setSelc1] = useState(); //title들을 변화시키기위한 useState를 선언. 변화시키려면 setSelc1을 GalC1에다가 전달하고, GalC1에서 타이틀들을 클릭했을 때 setSelc1이 발동되도록 하면 된다.
@@ -41,7 +41,7 @@ const GalMain = ({c1, c2, data1}) => {
 
             <div className="main">
                 <GalC1 c1={c1} selc1={selc1} setSelc1={setSelc1} />
-                {selData && <GalC2 selData={selData} />}
+                {selc1 && <GalC2 selData={selData} />}
             </div>
         </div>
     );

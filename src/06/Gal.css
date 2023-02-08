@@ -36,7 +36,7 @@
     text-align: center;
   }
 
-  .Tag1:hover, .Tag1:active, .Tag11:hover, .Tag11:active{
+  .Tag1:hover, .Tag1:active, .Tag11{
     background-color: darkblue;
     color: white;
   }
