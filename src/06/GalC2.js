@@ -24,9 +24,9 @@ const GalC2 = ({selData}) => {//클릭했을 때 해당하는 타이틀이 존�
    
 
     return(
-        <div className="dTag">
+        <>
             {dTag}
-        </div>
+        </>
     );
 }
 export default GalC2;

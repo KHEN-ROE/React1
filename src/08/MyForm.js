@@ -44,7 +44,7 @@ const MyForm = () => {
                 </p>
                 <p>
                     <label htmlFor="txt3">선택과목 : </label><br />
-                    <select ref={sel1R} name="sel1">
+                    <select ref={sel1R} defaultValue='자바스크립트' name="sel1">
                         <option value="자바">자바</option>
                         <option value="HTML">HTML</option>
                         <option value="자바스크립트">자바스크립트</option>

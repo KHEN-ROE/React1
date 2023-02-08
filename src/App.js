@@ -7,7 +7,7 @@ import './App.css';//index.js에서 App임포트하고
 // import Taccident1 from './05/Taccident1';
 import Gal from './06/Gal' ;
 // import Mycom from './07/Mycom';
-import MyForm from './08/MyForm';
+// import MyForm from './08/MyForm';
 
 const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하고 싶으면 부모태그로 감싸면됨
   return (

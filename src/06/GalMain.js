@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import GalC1 from "./GalC1";
 import GalC2 from "./GalC2";
 import Ghead from "./Ghead";
@@ -9,14 +9,26 @@ import Ghead from "./Ghead";
 
 const GalMain = ({c1, data1}) => {
     
+    const handleSelect = (item) => {//온클릭했을 때 이 함수 호출, setSelc1 발동시키고 매개변수로 타이틀들을 넘겨준다(배열). 이제 타이틀들을 누를 때마다 state가 변화하고 재랜더링된다.
+        setSelc1(item)              //누를 때마다 item배열에서 누른 값을 selc1에 대입한다.
+
+    }
+
+
     //선택된 대분류
     let [selc1, setSelc1] = useState(); //title들을 변화시키기위한 useState를 선언. 변화시키려면 setSelc1을 GalC1에다가 전달하고, GalC1에서 타이틀들을 클릭했을 때 setSelc1이 발동되도록 하면 된다.
 
     //선택된 대분류에 해당하는 상세내용
     let [selData, setSelData] = useState({});//title들이 클릭됐을 때 구현할 상세내용 변화시킬 useState선언. 근데 왜 오브젝트인가? selData를 전달하는 이유? useEffect에서 연산수행하여 selData에 저장.
 
-    
+    const [Tag1, setTag1] = useState();
 
+    const txtR = useRef();
+    
+    useEffect(()=>{//처음 랜더링시 검색창에 포커스 가게 함.
+        txtR.current.focus();
+    },[])
+    
     useEffect(()=>{//타이틀들을 클릭할 때마다 state가 변화하게 되는 것이고, 이에 따라 재 랜더링된다. 랜더링이 될 때마다 useEffect는 실행된다. 즉 여기서는 selc1이 변화할 때마다 이 useEffect가 실행된다 
         console.log("selc1", selc1)
     },[selc1])
@@ -31,7 +43,12 @@ const GalMain = ({c1, data1}) => {
         console.log("selData", selData);
     },[selData])
 
-
+    const [c1tag1, setC1Tag1] = useState([]);//undefined 방지하기 위해 초깃값 []로 줌. 없어도 되긴 하던데. undefined 뜨면 해볼 것
+    const showC1 = () => {
+        console.log(txtR.current.value);
+        let temp = c1.filter((i) =>i.includes(txtR.current.value))
+        setC1Tag1(temp.map((item) => <div className="Tag1" key={item} onClick={()=>handleSelect(item)}>{item}</div>));
+    }
     
     return(
         <div className="content">
@@ -40,9 +57,25 @@ const GalMain = ({c1, data1}) => {
             </div>
 
             <div className="main">
-                <GalC1 c1={c1} selc1={selc1} setSelc1={setSelc1} />
-                {selc1 && <GalC2 selData={selData} />}
+                <div className="c1tag1">
+                    <div className="form1">
+                        <form>
+                            <input ref={txtR} type="text" name="txt1" onChange={showC1} />
+                            <button className="but1"type="reset">취소</button>
+                        </form>
+                    </div>
+
+                     <div className="box1">
+                        {c1tag1}
+                     </div>
+
+                </div>
+
+                <div className="dTag">
+                    {selc1 && <GalC2 selData={selData} />}
+                </div>            
             </div>
+
         </div>
     );
 }

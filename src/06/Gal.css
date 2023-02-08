@@ -23,6 +23,24 @@
     background-color: darkblue;
     color: white;
   }
+  
+
+  .form1 {
+    display: flex;
+    justify-content: left;
+    margin-left: 65px;
+    margin-top: 10px;
+    background-color: darkblue;
+    width: 230px;
+    align-items: top;
+    padding: 20px;
+    
+  }
+  .but1 {
+    margin-left: 10px;
+    background-color: green;
+    color: white;
+  }
 
   .Tag1, .Tag11 {
     display: flex;
@@ -36,14 +54,22 @@
     text-align: center;
   }
 
+  .dTag {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
   .Tag1:hover, .Tag1:active, .Tag11{
     background-color: darkblue;
     color: white;
   }
 
+  
  img {
-    width: 40vw;
-    height: 50vh;
+    width: 500px;
+    height: 500px;
     border: 1px solid gray;
     border-radius: 10px;
  }
