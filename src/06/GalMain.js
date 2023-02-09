@@ -9,11 +9,9 @@ import Ghead from "./Ghead";
 
 const GalMain = ({c1, data1}) => {
     
-   
-
 
     //선택된 대분류
-    let [selc1, setSelc1] = useState(); //타이틀들을 눌렀을 때 스테이트 변
+    let [selc1, setSelc1] = useState(); //타이틀들을 눌렀을 때 스테이트 변수 변화
 
     //선택된 대분류에 해당하는 상세내용
     let [selData, setSelData] = useState({});//title들이 클릭됐을 때 구현할 상세내용 변화시킬 useState선언. 근데 왜 오브젝트인가? selData를 전달하는 이유? useEffect에서 연산수행하여 selData에 저장.

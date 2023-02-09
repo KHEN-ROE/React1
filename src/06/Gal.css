@@ -59,6 +59,7 @@
     flex-direction: column;
     margin-top: 20px;
     margin-left: 20px;
+    width: 500px;
   }
 
   .Tag1:hover, .Tag1:active, .Tag11{
@@ -68,35 +69,60 @@
 
   
  img {
-    width: 500px;
-    height: 500px;
+    width: 275px;
+    height: 200px;
     border: 1px solid gray;
     border-radius: 10px;
+    margin: 10px;
+    
  }
 
  .li1 {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
-  color: darkblue;
+  color: white;
  }
 
  .li3 {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
+  color: white;
 }
 
 .li2 {
-  color: brown;
+  color: white;
   font-size: 17px;
 }
-
+.li4{
+  color: white;
+}
 .li5 {
   font-style: italic;
-  color: darkorchid;
+  color: white;
+  font-size: 12px;
 }
 
 li {
   list-style-type: none;
 }
  
- 
+.rt1 {
+  width: 300px;
+  height: 400px;
+  background-color: darkblue;
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px gray;
+  border-radius: 10px;
+  /* float: left; */
+
+}
+
+select{
+  width: 200px;
+  padding: 12px 20px;
+  margin:  8px 0;
+  box-sizing: border-box;
+  border: solid 1px black;
+  border-radius: 10px
+}

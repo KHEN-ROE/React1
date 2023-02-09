@@ -27,12 +27,14 @@ const GalC2 = ({selData}) => {//클릭했을 때 해당하는 타이틀이 존�
     return(
         <div className="rt1">
             {/* {dTag} */}
-            <img src={selData.galWebImageUrl}></img>
-            <li className="li1">{selData.galTitle}</li>
-            <li className="li2">{selData.galPhotographyLocation}</li>
-            <li className="li3">{selData.galPhotographer}</li>
-            <li className="li4">{selData.galPhotographyMonth}</li>
-            <li className="li5">{selData.galSearchKeyword}</li>
+            <li><img src={selData.WebImageUrl}></img></li>
+            <li className="li1">{selData.Title}</li>
+            <li className="li2">{selData.PhotographyLocation}</li>
+            <li className="li3">{selData.Photographer}</li>
+            <li className="li4">{selData.Month}</li>
+            <li className="li5">{selData.SearchKeyword}</li>
+            
+            
         </div>
     );
 }
