@@ -1,5 +1,5 @@
 import './App.css';//index.js에서 App임포트하고
-// import GalSelect from './06/GalSelect';
+import GalSelect from './06/GalSelect';
 // import Frcst from './04/Frcst';
 // import Mydiv from './03/Mydiv';
 // import Taccident from './05/Taccident';
@@ -9,8 +9,8 @@ import './App.css';//index.js에서 App임포트하고
 // import Gal from './06/Gal' ;
 // import Mycom from './07/Mycom';
 // import MyForm from './08/MyForm';
-import RouteMain from './09/RouteMain';
-import { BrowserRouter } from 'react-router-dom';
+// import RouteMain from './09/RouteMain';
+// import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하고 싶으면 부모태그로 감싸면됨
   return (
@@ -23,11 +23,11 @@ const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하
       // <Gal />
       // <Mycom />
       // <MyForm />
-      // <GalSelect />
+      <GalSelect />
       
-      <BrowserRouter>
-        <RouteMain />
-      </BrowserRouter>
+      // <BrowserRouter>
+      //   <RouteMain />
+      // </BrowserRouter>
       // 브라우저 라우터 사이에 컴포넌트 삽입
   );
 }
