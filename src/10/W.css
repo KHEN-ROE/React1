@@ -1,0 +1,45 @@
+.h1 {
+    background-color: darkred;
+    margin: 0px;
+    border: solid 1px black;
+    width: 420px;
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    width: 420px;
+    height: 800px;
+    justify-content: top;
+    align-items: center;
+    margin: 10px;
+}
+
+li {
+    list-style-type: none;
+    font-size: 40px;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-right: 38px;
+    width: 30vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.whdiv {
+    display: flex;
+    justify-content: center;
+}
+
+li:hover, li:active {
+    background-color: aqua;
+}
