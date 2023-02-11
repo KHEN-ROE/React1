@@ -9,9 +9,8 @@ import './App.css';//index.js에서 App임포트하고
 // import Gal from './06/Gal' ;
 // import Mycom from './07/Mycom';
 // import MyForm from './08/MyForm';
-// import RouteMain from './09/RouteMain';
-// import { BrowserRouter } from 'react-router-dom';
-import Wmain from './10/Wmain';
+import RouteMain from './09/RouteMain';
+// import Wmain from './10/Wmain';
 import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하고 싶으면 부모태그로 감싸면됨
@@ -27,13 +26,13 @@ const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하
       // <MyForm />
       // <GalSelect />
       
-      // <BrowserRouter>
-      //   <RouteMain />
-      // </BrowserRouter>
-      
       <BrowserRouter>
-          <Wmain />
+        <RouteMain />
       </BrowserRouter>
+      
+      // <BrowserRouter>
+      //     <Wmain />
+      // </BrowserRouter>
       // 브라우저 라우터 사이에 컴포넌트 삽입
   );
 }
