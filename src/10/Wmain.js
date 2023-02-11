@@ -7,7 +7,7 @@ const Wmain = () => {
     return(
         <>
             <Routes>
-                {/* path는 url주소를 다음과 같이 설정하겠다. element는 보여주고 싶은 컴포넌트 */}
+                {/* path는 url주소를 다음과 같이 설정하겠다. element는 보여주고 싶은 컴포넌트*/}
                 <Route path="/" element={<Wmenu />} />
                 <Route path="/w1" element={<W1 />} />       
                 <Route path="/w2" element={<W2 />} />

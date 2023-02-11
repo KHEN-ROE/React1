@@ -1,3 +1,8 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
 .h1 {
     background-color: darkred;
     margin: 0px;
@@ -27,6 +32,7 @@ li {
     border-radius: 10px;
     margin-bottom: 15px;
     margin-right: 38px;
+    margin-top: 20px;
     width: 180px;
     height: 10vh;
     display: flex;
