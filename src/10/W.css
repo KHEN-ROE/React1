@@ -27,7 +27,7 @@ li {
     border-radius: 10px;
     margin-bottom: 15px;
     margin-right: 38px;
-    width: 30vw;
+    width: 180px;
     height: 10vh;
     display: flex;
     justify-content: center;
@@ -35,10 +35,6 @@ li {
 
 }
 
-.whdiv {
-    display: flex;
-    justify-content: center;
-}
 
 li:hover, li:active {
     background-color: aqua;
