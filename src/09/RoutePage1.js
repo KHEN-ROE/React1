@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";//main에서 보낸 걸 받기 위해 useParams 사용
 
 const RoutePage1 = () => {
