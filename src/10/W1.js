@@ -19,15 +19,14 @@ const W1 = () => {
 
     //맨처음 컴포넌트 랜더링시 실행
     useEffect(() => {
-        setItems(weather2.response.body.items.item);
+        setItems(weather2.response.body.items.item);//맨 처음 랜더링될 때 item배열에 있는 값들을 items에 저장
     }, []);
 
     //특정 state변수 변경 시 실행
     useEffect(() => {
-        if(!items) return ;
+        if(!items) return ; // useState 초기값 안주면 처음 랜더링 될때 items가 undefined 상태임. && 연산자써서 items가 있을때만(즉 클릭했을 때) 랜더링
         console.log("items", items)
-        let temp;
-        temp = items.map((i, n) =>
+        let temp = items.map((i, n) => //n이 키. items 배열에 있는 요소들을 하나씩 가져와서 인자 i에 전달
             <div className="w1div" key={"w1div"+n}>
                 <span className="sp0">{keys[i.category][0]}</span>
                 <span className="sp1">{i.obsrValue}</span>
@@ -35,7 +34,7 @@ const W1 = () => {
             </div>
          )
         setItemTag(temp)
-    },[items]);
+    },[items]);//items가 변할 때마다 useEffect 발동하는데 언제 무엇때문에 변화? 클릭할 때마다. 왜? 클릭하면 일단 랜더링 일어나고 그때 items에 item요소들 저장. 즉 스테이트 변화
 
 
     // let items = weather2.response.body.items.item ;

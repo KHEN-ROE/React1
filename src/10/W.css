@@ -81,3 +81,16 @@ li:hover, li:active {
     justify-content: left;
 }
 
+.bt{
+    margin: 7px;
+}
+
+.bts {
+    width: 100%;
+    height: 6vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}

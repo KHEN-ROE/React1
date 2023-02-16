@@ -11,9 +11,9 @@ import './App.css';//index.js에서 App임포트하고
 // import Mycom from './07/Mycom';
 // import MyForm from './08/MyForm';
 // import RouteMain from './09/RouteMain';
-// import Wmain from './10/Wmain';
-// import { BrowserRouter } from 'react-router-dom';
-import Boxoffice from './11/Boxoffice';
+import Wmain from './10/Wmain';
+import { BrowserRouter } from 'react-router-dom';
+// import Boxoffice from './11/Boxoffice';
 
 
 const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하고 싶으면 부모태그로 감싸면됨
@@ -33,11 +33,11 @@ const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하
       //   <RouteMain />
       // </BrowserRouter>
       
-      // <BrowserRouter>
-      //     <Wmain />
-      // </BrowserRouter>
+      <BrowserRouter>
+          <Wmain />
+      </BrowserRouter>
       // <Async />
-      <Boxoffice />
+      // <Boxoffice />
   );
 }
 
