@@ -6,6 +6,7 @@ const Boxoffice = () => {
 
     //상영일 선택 state변수
     const [targetDt,setTargetDt] = useState();
+
     //input 제어
     const mvdr = useRef();
 
@@ -34,7 +35,8 @@ const Boxoffice = () => {
                 </form>
             </div>
             <div className="mvmain">
-                <BoxofficeList targetDt={targetDt}/>
+              {targetDt &&  <BoxofficeList targetDt={targetDt}/> }
+              {/* targetDt가 undefined면 실행안한다. 즉 클릭을 안하면 안보여줌 */}
             </div>
         </>
     );
