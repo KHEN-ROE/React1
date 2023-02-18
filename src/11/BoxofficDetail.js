@@ -20,17 +20,17 @@ const BoxofficDetail = ({mvcd}) => {
             let showItem = {'영화명': 'movieNm',
                             '개봉일' : 'openDt',
                             '제작상태' : 'prdtStatNm',
-                            '영화구분':'typeNm'}
+                            '영화구분': 'typeNm'
+                        }
 
             if(mvcd){
                 let tag=[];
-            for(let[k,v] of Object.entries(showItem)){
-                tag.push(<div className="dtdiv" key={k}>
-                    <span className="dtsp1">{k}</span>
-                    <span className="stsdp2">{temp[v]}</span>
-                </div>)
-                
-            }
+                for(let[k,v] of Object.entries(showItem)){
+                        tag.push(<div className="dtdiv" key={k}>
+                            <span className="dtsp1">{k}</span>
+                            <span className="dtsp2">{temp[v]}</span>
+                        </div>)
+                }
             setMTag(tag)
         }
             } catch(err) {
@@ -44,9 +44,6 @@ const BoxofficDetail = ({mvcd}) => {
             console.log("mvcd", mvcd)
         },[mvcd]);
         
-    
-    
-    
         return(
             <>
                {mvcd && mTag}

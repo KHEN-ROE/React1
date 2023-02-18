@@ -6,8 +6,8 @@ const Wmenu = () => {
         <div className="content">
             <Wheader title={'일기예보'} />
             <ul>
-                <li><Link to="/W1">단기예보</Link></li>
-                <li><Link to="/W2">중기예보</Link></li>
+                <li className="lm"><Link to="/W1">단기예보</Link></li>
+                <li className="lm"><Link to="/W2">중기예보</Link></li>
             </ul>
         </div>
     );

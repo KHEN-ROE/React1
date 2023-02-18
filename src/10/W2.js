@@ -1,35 +1,59 @@
 import { useState,useEffect } from "react";
 import Wheader from "./Wheader";
-import keys from "../db/item.json"
 import weather from "../db/weather.json";
+
 
 const W2 = () => {
 
-    let [item1, setItem1] = useState(); //맨처음 랜더링될 때 
-    let [item2, setItem2] = useState(); // 클릭했을 때 랜더링 되도록
+    let [item1, setItem1] = useState(); //맨처음 랜더링될 때
+    let [item3, setItem3] = useState();
+
+    let [day, setDay] = useState(false);
     
-
-
-    const item = weather.response.body.items.item;
-    console.log(item)
-   
-
-    const showD = () => { //이제 누를 때마다 state가 변경되나?
-        setItem1(item);
+    
+    let showD = () => {
+        setDay(true);
     }
-    
-    // useEffect(() => {
-        
-    // },[item1])
-  
 
-    // useEffect(()=> {
-    //     let temp = 
-    // },[item1])
    
 
-    
+    //최초 랜더링시
+    useEffect(() => {
+        setItem1(weather.response.body.items.item);
+    },[])
 
+    useEffect(()=>{
+        console.log("day", day);
+        let temp = item1 && item1.map((k, i)=>{
+            return (
+                <div>
+                    <div className="day3" key={i}>
+                        <li className="l3">3일 후</li>
+                        <li className="l3">오전 강수량</li>
+                        <li className="l3">{k.rnSt3Am}%</li>
+                    </div>
+                    <div className="day3" >
+                        <li className="l3">3일 후</li>
+                        <li className="l3">오후 강수량</li>
+                        <li className="l3">{k.rnSt3Pm}%</li>
+                    </div>
+                    <div className="day3">
+                        <li className="l3">3일 후</li>
+                        <li className="l3">오전 날씨예보</li>
+                        <li className="l3">{k.wf3Am}</li>
+                    </div>
+                    <div className="day3">
+                        <li className="l3">3일 후</li>
+                        <li className="l3">오후 날씨예보</li>
+                        <li className="l3">{k.wf3Pm}</li>
+                    </div>
+                </div>
+            );
+        })
+        setItem3(temp);
+    },[day])
+
+    
     
     return(
         <div className="content">
@@ -43,9 +67,9 @@ const W2 = () => {
                 <span><button className="bt">5일 후 날씨</button></span>
                 <span><button className="bt">6일 후 날씨</button></span>
             </div>
-
+           
             <div>
-                {item2}
+                {item3}
             </div>
 
         </div>
