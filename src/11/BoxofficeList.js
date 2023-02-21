@@ -48,21 +48,25 @@ const BoxofficeList = ({targetDt}) => {
 
     
     return(
-        <div>
-            <div>
+        <div className="moviemain">
+            <div className="mvlist">
                 {targetDt && mvlist} 
                {/* targetDt 없으면 mvlist 못나옴 */}
             </div>
 
-            <div className="col">
-                <span className="col0" id="colrank">순위</span>
-                <span className="col1" id="colmovieNm">영화명</span>
-                <span className="col2" id="colaudiCnt">관객수</span>
+            <div className="moviename">
+                <div className="col">
+                    <span className="col0" id="colrank">순위</span>
+                    <span className="col1" id="colmovieNm">영화명</span>
+                    <span className="col2" id="colaudiCnt">관객수</span>
+                    
+                </div>
+                
+                {mvlist1}
                 
             </div>
-            {mvlist1}
 
-            <div>
+            <div className="moviedetail">
                {mvcd && <BoxofficDetail mvcd = {mvcd} />  }
             </div>
         </div>

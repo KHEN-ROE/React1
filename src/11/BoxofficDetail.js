@@ -1,57 +1,66 @@
 import { useState, useEffect } from "react";
 
-const BoxofficDetail = ({mvcd}) => {
+const BoxofficeDetail = ({mvcd}) => {
 
-    const [mTag, setMTag] = useState();
-
-    console.log("BoxofficeDetail",mvcd)
-
+    const [mTag, setMTag] = useState() ;   
     const getData = async() => {
-        let url = 'https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&'
-        url = url + `movieCd =${mvcd}`;
-
-        try{
-            const resp = await fetch(url);
+        let url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&'
+        url = url + `movieCd=${mvcd}`;
+        
+        try {
+            const resp = await fetch(url) ;
             const data = await resp.json() ;
-            
+
             console.log("url", url)
             //object
             let temp = data.movieInfoResult.movieInfo ;
-            let showItem = {'영화명': 'movieNm',
-                            '개봉일' : 'openDt',
-                            '제작상태' : 'prdtStatNm',
-                            '영화구분': 'typeNm'
-                        }
-
-            if(mvcd){
-                let tag=[];
-                for(let[k,v] of Object.entries(showItem)){
+            const showitem = {
+                "영화명" : "movieNm",
+                "개봉일" : "openDt" ,
+                "제작상태" : "prdtStatNm",
+                "영화구분" : "typeNm",
+                "감독" : "directors"
+            }
+            console.log("showitem",showitem)
+    
+            if (mvcd) {
+                let tag = [] 
+                for(let [k, v] of Object.entries(showitem)) {
+                    if ( k === "감독") {
                         tag.push(<div className="dtdiv" key={k}>
                             <span className="dtsp1">{k}</span>
+                            <span className="dtsp2">&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;{temp[v][0].peopleNm}</span>
+                        </div>)
+                    }
+                    else {
+                        tag.push(<div className="dtdiv" key={k}>
+                            <span className="dtsp1">{k}&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <span className="dtsp2">{temp[v]}</span>
                         </div>)
-                }
-            setMTag(tag)
+                    }
+                    //console.log("tag", k, selmv[v])
+                };
+                setMTag(tag);
+            }
         }
-            } catch(err) {
+        catch(err) {
             console.log(err)
         }
         
-        }
-
-        useEffect(() =>{
-            getData();
-            console.log("mvcd", mvcd)
-        },[mvcd]);
-        
-        return(
-            <>
-               {mvcd && mTag}
-            </>
-        );
     }
 
-   
-    
+    useEffect(() =>{
+        getData();
+        console.log("mvcd", mvcd)
+    }, [mvcd]);
 
-export default BoxofficDetail;
+    return (
+        <>
+   
+        {mvcd && mTag}
+  
+        </>
+    )
+}
+
+export default BoxofficeDetail;

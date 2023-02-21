@@ -38,9 +38,43 @@ input  {
 
 .mvmain {
     display: flex;
+    margin: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.mvlist1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.moviename {
+    display: flex;
+    flex-direction: column;
+}
+
+.moviemain {
+ display: flex;
+ flex-direction: row;
+}
+
+.moviedetail {
+    display: flex;
+    flex-direction: column;
+    margin: 70px;
     border: solid 1px black;
     border-radius: 10px;
-    
+    width: 450px;
+    justify-content: center;
+    align-items: left;
+    background-color: cornsilk;
+    font-size: 20px;
+    padding-left: 30px;
+}
+
+.dtdiv {
+    margin: 10px;
+
 }
 
 .col {
