@@ -18,7 +18,7 @@ const BoxofficeList = ({targetDt}) => {
     useEffect(() => {
 
         const apikey = 'f5eef3421c602c6cb7ea224104795888' ;
-        let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apikey}&targetDt=${targetDt}` ;
+        let url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apikey}&targetDt=${targetDt}` ;
 
         console.log(url)
         fetch(url)//fulfilled 상태가 되면 .then을 쓴다
