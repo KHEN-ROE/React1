@@ -30,3 +30,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # react 프로젝트 : 한국관광공사 관광사진 정보
 호스팅 주소 : https://busanattractions.web.app
+
+# react 프로젝트 : 영화진흥원 API 데이터를 fetch를 이용하여 실시간으로 제공
+호스팅 주소 : https://boxoffice-7669b.web.app/
