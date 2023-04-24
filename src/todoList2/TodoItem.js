@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function TodoItem({ todo, onUpdate, onDelete }) {
+function TodoItem({ todo, updateTodo, deleteTodo }) {
   const [text, setText] = useState(todo.text);
   const [editing, setEditing] = useState(false);
 
@@ -15,12 +15,12 @@ function TodoItem({ todo, onUpdate, onDelete }) {
   };
 
   const handleUpdate = () => {
-    onUpdate(todo.id, text);
+    updateTodo(todo.id, text);
     setEditing(false);
   };
 
   const handleDelete = () => {
-    onDelete(todo.id);
+    deleteTodo(todo.id);
   };
 
   const handleEdit = () => {
