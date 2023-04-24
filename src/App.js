@@ -13,31 +13,36 @@ import './App.css';//index.js에서 App임포트하고
 // import RouteMain from './09/RouteMain';
 // import Wmain from './10/Wmain';
 // import { BrowserRouter } from 'react-router-dom';
-import Boxoffice from './11/Boxoffice';
-
+// import Boxoffice from './11/Boxoffice';
+import Todo from './todoList/Todo';
+// import TodoList from './todoList/TodoList';
+// import TodoList from './todoList2/TodoList';
 
 const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하고 싶으면 부모태그로 감싸면됨
   return (
-      // <Frcst />
-      // <Mydiv />
-      // <Taccident />
-      // <Box />
-      // <Example />
-      // <Taccident1 />
-      // <Gal />
-      // <Mycom />
-      // <MyForm />
-      // <GalSelect />
-      
-      // <BrowserRouter>
-      //   <RouteMain />
-      // </BrowserRouter>
-      
-      // <BrowserRouter>
-      //     <Wmain />
-      // </BrowserRouter>
-      // <Async />
-      <Boxoffice />
+    // <Frcst />
+    // <Mydiv />
+    // <Taccident />
+    // <Box />
+    // <Example />
+    // <Taccident1 />
+    // <Gal />
+    // <Mycom />
+    // <MyForm />
+    // <GalSelect />
+
+    // <BrowserRouter>
+    //   <RouteMain />
+    // </BrowserRouter>
+
+    // <BrowserRouter>
+    //     <Wmain />
+    // </BrowserRouter>
+    // <Async />
+    // <Boxoffice />
+    <Todo />
+    // <TodoList />
+    
   );
 }
 
