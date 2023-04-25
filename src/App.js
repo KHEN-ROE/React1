@@ -15,8 +15,10 @@ import './App.css';//index.js에서 App임포트하고
 // import { BrowserRouter } from 'react-router-dom';
 // import Boxoffice from './11/Boxoffice';
 // import Todo from './todoList/Todo';
-import TodoList from './todoList/TodoList';
+// import TodoList from './todoList/TodoList';
 // import TodoList from './todoList2/TodoList';
+import Async from './ASYNC/Async'
+
 
 const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하고 싶으면 부모태그로 감싸면됨
   return (
@@ -41,8 +43,8 @@ const App = () => {//return은 하나의 태그만 할 수 있다. 여러개 하
     // <Async />
     // <Boxoffice />
     // <Todo />
-    <TodoList />
-    
+    // <TodoList />
+    <Async />
   );
 }
 

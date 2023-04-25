@@ -34,6 +34,27 @@ function TodoList() {
       });
   }
 
+  // 엑시오스 사용한 코드
+//   import axios from 'axios';
+
+// function handleSubmit(e) {
+//   console.log("newtodo", newTodo)
+//   e.preventDefault();
+//   axios.post('http://localhost:8080/api/todos', {
+//     text: newTodo
+//   })
+//     .then(response => {
+//       setTodos([...todos, response.data]); 
+//       setNewTodo('');
+//     })
+//     .catch(error => {
+//       console.error(error);
+//     });
+// }
+
+
+
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
