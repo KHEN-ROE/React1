@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const fetchData = async () => { // async는 promise를 반
+  const fetchData = async () => { // async는 promise를 반환
     setLoading(true); //함수 내에서 'loading' 상태를 'true'로 설정하여 요청이 진행 중임을 나타냄
     const response = await axios.get("https://api.example.com/data"); // API 요청을 하고 응답이 반환될 때까지 기다림. 이 코드에서는 받아올게 없으므로 계속 Loading...
                         //fetch와 axios 차이점 : 1. fetch는 response객체에서 데이터 추출 반면 axios는 데이터에 직접접근 가능
