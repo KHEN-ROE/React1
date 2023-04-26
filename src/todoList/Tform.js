@@ -70,7 +70,7 @@ const Tform = () => {
         <div>
             <div className='form'>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" value={newTodo} onChange={e => setNewTodo(e.target.value)} className='input' placeholder='                                                                    Stop everything Do onething' />
+                    <input type="text" value={newTodo} onChange={e => setNewTodo(e.target.value)} className='input' placeholder='                                                                    Stop everything, Do onething' />
                     <button type="submit">Add Todo</button>
                 </form>
             </div>
