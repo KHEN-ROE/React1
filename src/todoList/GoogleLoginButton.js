@@ -3,7 +3,7 @@ import {GoogleLogin} from "@react-oauth/google";
 import {GoogleOAuthProvider} from "@react-oauth/google";
 
 const GoogleLoginButton = () => {
-    const clientId = '1050135280688-bgoki6c46rsshsbm68ru5mh075qnhlvn.apps.googleusercontent.com'
+    const clientId = 'clientID'
     return (
         <>
             <GoogleOAuthProvider clientId={clientId}>
