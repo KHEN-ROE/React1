@@ -5,10 +5,10 @@ import './Todo.css'
 
 const Todo = () => {
   return (
-    <div className="todo">
-      <Theader />
-      <Tform />
-    </div>
+      <div className="todo">
+        <Theader />
+        <Tform />
+      </div>
   )
 }
 

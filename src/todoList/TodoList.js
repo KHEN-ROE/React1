@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { GoogleLogin } from "@react-oauth/google";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
 
 /* 
 순서 - 0. 처음에 랜더링될 때 DB에 있는 정보를 화면에 출력하도록 만들었다.
@@ -28,7 +31,7 @@ function TodoList() {
       body: JSON.stringify({ text: newTodo })
     })
       .then(response => response.json())
-      .then(data => {
+      .then(data => { // 서버 측에서 entity 만들 때 선언했던 id, text를 포함하여 newTodo 객체를 반환한다. 
         setTodos([...todos, data]); //기존 데이터 유지하면서 새 데이터 저장
         setNewTodo('');
       });
@@ -84,7 +87,7 @@ function TodoList() {
   // }
 
   const editTodo = (id) => {
-    console.log("id to edit:",id)
+    console.log("id to edit:", id)
     const updatedText = prompt("Enter updated text:");
     if (updatedText) {
       fetch(`http://localhost:8080/api/todos/${id}`, {
@@ -108,6 +111,9 @@ function TodoList() {
     }
   }
 
+  const clientId = '1050135280688-bgoki6c46rsshsbm68ru5mh075qnhlvn.apps.googleusercontent.com'
+
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -115,7 +121,22 @@ function TodoList() {
         <button type="submit">Add Todo</button>
       </form>
       <div>
-        {todos.map(todo => (
+        <GoogleOAuthProvider clientId={clientId}>
+          <GoogleLogin
+            onSuccess={credentialResponse => {
+              console.log(credentialResponse);
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+            useOneTap // 원탭로그인
+            auto_select // 자동로그인
+          />
+        </GoogleOAuthProvider>
+      </div>
+
+      <div>
+        {todos.map(todo => ( // todos에는 서버로 부터 받아온 id,text가 포함되어있다.
           <li key={todo.id}>{todo.text}
             <button type='submit' onClick={() => editTodo(todo.id)}>edit</button>
             <button type='submit' onClick={() => deleteTodo(todo.id)} >delete</button>

@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Theader = () => {
   return (
     <div className='thead'>
